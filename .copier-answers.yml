@@ -1,0 +1,13 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: v0.0.3
+_src_path: https://github.com/delapazruiz/fairRcode.git
+authors: Iowner
+citation: true
+code_of_conduct: false
+community: true
+copyright_holder: Iowner
+copyright_year: 2026
+owner: Iowner
+software_license: MIT License
+software_name: Irenes_slicer
+software_purpose: The purpose of Irenes_slicer is ...Visualizing medical images
