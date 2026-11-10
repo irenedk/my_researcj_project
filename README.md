@@ -40,26 +40,90 @@ project-root/
 
 ## Installation
 
-[Describe the steps that users (not developers) should follow to install the code in each of the intended platforms (e.g. Window 10, MacOS, etc.).]
+The commands below assume you have **Python 3.11 or 3.12**, **Git**, and **VS Code** installed. Install the VS Code **Python** and **Jupyter** extensions if you want to run the notebook in VS Code. No dedicated GPU is required.
 
-**Requirements** 
-- [List the software, OS, and/or technologies on which the code depends, and add hyperlinks to the sources whenever possible.]
-- [State any relevant hardware requirements.]
+### 1. Clone and enter the repository
+```bash
+git clone https://github.com/irenedk/my_researcj_project.git
+cd my_researcj_project
+```
+If you already have a local clone, open it instead of cloning again. Run the following terminal commands from the **repository root** (the folder containing this README and `requirements.txt`).
+### 2. Create a virtual Python environment
+
+In **Windows PowerShell**:
+
+```powershell
+py -3.11 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+Or in **Git Bash on Windows**:
+
+```bash
+py -3.11 -m venv .venv
+source .venv/Scripts/activate
+```
+
+Or on **macOS/Linux**:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+You should now see `(.venv)` at the start of your terminal prompt. If Python 3.11 is not installed, use an available compatible version (such as 3.12), adjusting the command accordingly.
+
+### 3. Install the dependencies
+
+```bash
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+**Note:** Python uses **`requirements.txt`**, not `requirements.r`. This file lists the packages required to execute the analysis notebook.
+
+### 4. Open and execute the notebook
+
+1. Open the **repository root folder** in VS Code.
+2. Open `code/00_sample_analysis.ipynb`.
+3. Click **Select Kernel** and choose the Python interpreter from `.venv` (or choose **Python Environments** → `.venv`).
+4. Click **Run All**.
+
+Run the notebook with the working directory set to either the repository root or the `code/` folder. It automatically creates its required output folders.
+
+### 5. Inspect the outputs
+
+A successful run creates:
+
+- `data/processed/cleaned_penguins.csv`
+- `outputs/reports/regression_results.txt`
+- `outputs/figures/fig-01-penguin-regression.png`
+- `outputs/figures/fig-01-penguin-regression.pdf`
+
+### 6. Deactivate the environment (optional)
+
+```bash
+deactivate
+```
+
+When returning to the project, activate the existing `.venv` again; you do not need to recreate it each time.
+
+## Reproducibility
+
+- The notebook reads dataset contents distributed with the `palmerpenguins` Python package, so no local raw-data download is needed.
+- The code automatically creates folders for generated results.
+- Dependencies are documented in `requirements.txt`, currently using **compatible version ranges**. This makes setup flexible, but does **not** yet provide a fully frozen environment. For strictly repeatable runs, test the workflow and then pin exact package versions in a lockfile.
+- Do not commit the `.venv/` directory or disposable generated files; configure `.gitignore` accordingly.
+- For detailed methods and output descriptions, see [`code/README.md`](code/README.md).
 
 ## License
-This software is distributed under a [CC-BY](LICENSE). 
 
-## Copyright
-
-&copy; , The Netherlands. 
+See [LICENSE](LICENSE) for the repository's actual license terms.
 
 ## Citation
 
-[Include a [CCF file (Citaion File Format)](https://citation-file-format.github.io/). See example in this repo: `CITATION.cff`. You can easily create the content of a CCF using [this tool](https://citation-file-format.github.io/cff-initializer-javascript/). ]
+See [CITATION.cff](CITATION.cff) for software citation information. Verify that the DOI badge above refers to the intended release or template before citing this repository.
 
-[CCF files can be converted to a multitude of formats, including BibTex,  EndNote, codemeta, plain JSON, schema.org, RIS, and Zenodo JSON ]
+## Acknowledgements
 
-## Acknowlegdements
-
-- [Best practices for sustainable software project, TDCC NES](https://github.com/SS-NES)
-- [Any other acknowlegdements]
+Based on the University of Twente R research-software template and open-science guidelines.
