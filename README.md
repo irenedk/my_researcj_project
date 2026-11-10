@@ -107,13 +107,7 @@ macOS/Linux:
 source .venv_research_course/bin/activate
 ```
 
-The terminal prompt should now begin with `(.venv_research_course)`. Verify the active Python version:
-
-```bash
-python --version
-```
-
-Expected output: `Python 3.13.17`.
+The terminal prompt should now begin with `(.venv_research_course)`. 
 
 If activation is prohibited, it is still possible to run the environment's Python directly, for example on Windows: `.\.venv_research_course\Scripts\python.exe -m pip install -r requirements.txt`.
 
@@ -123,8 +117,6 @@ If activation is prohibited, it is still possible to run the environment's Pytho
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
-
-**Note:** Python uses **`requirements.txt`**, not `requirements.r`. This file lists the packages required to execute the analysis notebook.
 
 ### 4. Open and execute the notebook
 
@@ -165,8 +157,8 @@ When returning to the project, activate the existing `.venv_research_course` aga
 
 - The notebook reads dataset contents distributed with the `palmerpenguins` Python package, so no local raw-data download is needed.
 - The code automatically creates folders for generated results.
-- Dependencies are documented in `requirements.txt`, currently using **compatible version ranges**. This makes setup flexible, but does **not** yet provide a fully frozen environment. For strictly repeatable runs, test the workflow and then pin exact package versions in a lockfile.
-- Do not commit the `.venv/` directory or disposable generated files; configure `.gitignore` accordingly.
+- Dependencies are documented in `requirements.txt`, currently using compatible version ranges. This makes setup flexible, but does not yet provide a fully frozen environment. For strictly repeatable runs, test the workflow and then pin exact package versions in a lockfile.
+- Do not commit the `.venv_research_course/` directory or disposable generated files; configure `.gitignore` accordingly.
 - For detailed methods and output descriptions, see [`code/README.md`](code/README.md).
 
 ## License
