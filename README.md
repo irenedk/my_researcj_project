@@ -53,25 +53,25 @@ If you already have a local clone, open it instead of cloning again. Run the fol
 In **Windows PowerShell**:
 
 ```powershell
-py -3.11 -m venv .venv
-.\.venv\Scripts\Activate.ps1
+py -3.11 -m venv .venv_research_course
+.\.venv_research_course\Scripts\Activate.ps1
 ```
 
 Or in **Git Bash on Windows**:
 
 ```bash
-py -3.11 -m venv .venv
-source .venv/Scripts/activate
+py -3.11 -m venv .venv_research_course
+source .venv_research_course/Scripts/activate
 ```
 
 Or on **macOS/Linux**:
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
+python3 -m venv .venv_research_course
+source .venv_research_course/bin/activate
 ```
 
-You should now see `(.venv)` at the start of your terminal prompt. If Python 3.11 is not installed, use an available compatible version (such as 3.12), adjusting the command accordingly.
+You should now see `(.venv_research_course)` at the start of your terminal prompt. If Python 3.11 is not installed, use an available compatible version (such as 3.12), adjusting the command accordingly.
 
 ### 3. Install the dependencies
 
@@ -86,7 +86,7 @@ python -m pip install -r requirements.txt
 
 1. Open the **repository root folder** in VS Code.
 2. Open `code/00_sample_analysis.ipynb`.
-3. Click **Select Kernel** and choose the Python interpreter from `.venv` (or choose **Python Environments** → `.venv`).
+3. Click **Select Kernel** and choose the Python interpreter from `.venv` (or choose **Python Environments** → `.venv_research_course`).
 4. Click **Run All**.
 
 Run the notebook with the working directory set to either the repository root or the `code/` folder. It automatically creates its required output folders.
@@ -106,7 +106,7 @@ A successful run creates:
 deactivate
 ```
 
-When returning to the project, activate the existing `.venv` again; you do not need to recreate it each time.
+When returning to the project, activate the existing `.venv_research_course` again; you do not need to recreate it each time.
 
 ## Reproducibility
 
