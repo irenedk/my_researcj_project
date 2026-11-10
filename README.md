@@ -38,47 +38,84 @@ project-root/
 └── requirements.r          # Required installations for the notebook
 ```
 
-## Installation
+## Installation and execution
 
-The commands below assume you have **Python** (this version is tested with Python 3.13), **Git**, and **VS Code** installed. Install the VS Code **Python** and **Jupyter** extensions if you want to run the notebook in VS Code. No dedicated GPU is required.
+This project uses **Python 3.13.17 (64-bit)** as its reference version. You will also need **Git** and, to run the notebook interactively, **VS Code** with the **Python** and **Jupyter** extensions. No dedicated GPU is required. If Python 3.13.17 is not yet installed, follow the instructions in step 2.
 
 ### 1. Clone and enter the repository
+
 ```bash
 git clone https://github.com/irenedk/my_researcj_project.git
 cd my_researcj_project
 ```
+
 If you already have a local clone, open it instead of cloning again. Run the following terminal commands from the **repository root** (the folder containing this README and `requirements.txt`).
+
 ### 2. Create a virtual Python environment
 
-In **Windows PowerShell**:
+Create the environment from the **repository root**. PowerShell and Git Bash on Windows use the same environment-creation command, but different activation commands.
+
+**Windows (PowerShell or Git Bash):**
 
 ```powershell
-py -m venv .venv_research_course
+py -3.13 --version
+py -3.13 -m venv .venv_research_course
+```
+
+The version command should report `Python 3.13.17`. The `py -3.13` selector chooses the Python 3.13 series, not a specific patch version, so check before creating the environment.
+
+**macOS/Linux:**
+
+```bash
+python3.13 --version
+python3.13 -m venv .venv_research_course
+```
+
+Check that the version reports `Python 3.13.17` before creating the environment.
+
+**If Python 3.13.17 is not installed:**
+
+1. On Windows, check available versions using `py --list`. On macOS/Linux, check `python3.13 --version`.
+2. Install Python 3.13.17 from the [official Python release page](https://www.python.org/downloads/release/python-31317/) using the installer or installation instructions appropriate for your operating system.
+3. Restart the terminal and verify that the exact version is available.
+4. Run the environment-creation command above again.
+
+**Activate the environment:**
+
+Windows PowerShell:
+
+```powershell
 .\.venv_research_course\Scripts\Activate.ps1
 ```
-If PowerShell blocks the activation script with an Execution Policy error, run:
+
+If PowerShell reports that script execution is disabled, you can allow activation temporarily in the current session (if permitted by your organization's security policy):
 
 ```powershell
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\.venv_research_course\Scripts\Activate.ps1
 ```
-This changes the execution policy only for the current PowerShell session. On managed computers, organizational policies may prevent this change.
 
-Or in **Git Bash on Windows**:
+Git Bash on Windows:
 
 ```bash
-py -3.11 -m venv .venv_research_course
 source .venv_research_course/Scripts/activate
 ```
 
-Or on **macOS/Linux**:
+macOS/Linux:
 
 ```bash
-python3 -m venv .venv_research_course
 source .venv_research_course/bin/activate
 ```
 
-You should now see `(.venv_research_course)` at the start of your terminal prompt. If Python 3.11 is not installed, use an available compatible version (such as 3.12), adjusting the command accordingly.
+The terminal prompt should now begin with `(.venv_research_course)`. Verify the active Python version:
+
+```bash
+python --version
+```
+
+Expected output: `Python 3.13.17`.
+
+If activation is prohibited, it is still possible to run the environment's Python directly, for example on Windows: `.\.venv_research_course\Scripts\python.exe -m pip install -r requirements.txt`.
 
 ### 3. Install the dependencies
 
@@ -93,12 +130,21 @@ python -m pip install -r requirements.txt
 
 1. Open the **repository root folder** in VS Code.
 2. Open `code/00_sample_analysis.ipynb`.
+3. Click **Select Kernel** and choose **Python Environments** → `.venv_research_course`.
+4. Click **Run All**.
+
+Open the repository root folder as your VS Code workspace. The notebook is designed to find the project root and create its required output directories automatically.
+
+### 5. Open and execute the notebook
+
+1. Open the **repository root folder** in VS Code.
+2. Open `code/00_sample_analysis.ipynb`.
 3. Click **Select Kernel** and choose the Python interpreter from `.venv` (or choose **Python Environments** → `.venv_research_course`).
 4. Click **Run All**.
 
 Run the notebook with the working directory set to either the repository root or the `code/` folder. It automatically creates its required output folders.
 
-### 5. Inspect the outputs
+### 6. Inspect the outputs
 
 A successful run creates:
 
@@ -107,7 +153,7 @@ A successful run creates:
 - `outputs/figures/fig-01-penguin-regression.png`
 - `outputs/figures/fig-01-penguin-regression.pdf`
 
-### 6. Deactivate the environment (optional)
+### 7. Deactivate the environment (optional)
 
 ```bash
 deactivate
