@@ -53,7 +53,7 @@ If you already have a local clone, open it instead of cloning again. Run the fol
 In **Windows PowerShell**:
 
 ```powershell
-py -3.11 -m venv .venv_research_course
+py -m venv .venv_research_course
 .\.venv_research_course\Scripts\Activate.ps1
 ```
 If PowerShell blocks the activation script with an Execution Policy error, run:
