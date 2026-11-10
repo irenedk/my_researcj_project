@@ -40,7 +40,7 @@ project-root/
 
 ## Installation
 
-The commands below assume you have **Python 3.11 or 3.12**, **Git**, and **VS Code** installed. Install the VS Code **Python** and **Jupyter** extensions if you want to run the notebook in VS Code. No dedicated GPU is required.
+The commands below assume you have **Python** (this version is tested with Python 3.13), **Git**, and **VS Code** installed. Install the VS Code **Python** and **Jupyter** extensions if you want to run the notebook in VS Code. No dedicated GPU is required.
 
 ### 1. Clone and enter the repository
 ```bash
@@ -56,6 +56,13 @@ In **Windows PowerShell**:
 py -3.11 -m venv .venv_research_course
 .\.venv_research_course\Scripts\Activate.ps1
 ```
+If PowerShell blocks the activation script with an Execution Policy error, run:
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\.venv_research_course\Scripts\Activate.ps1
+```
+This changes the execution policy only for the current PowerShell session. On managed computers, organizational policies may prevent this change.
 
 Or in **Git Bash on Windows**:
 
