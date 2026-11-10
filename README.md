@@ -1,4 +1,4 @@
-
+[![DOI](https://zenodo.org/badge/1451156257.svg)](https://doi.org/10.5281/zenodo.24104008)
 # R Research Software Template
 
 <div align="center">
