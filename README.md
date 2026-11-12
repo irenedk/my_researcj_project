@@ -9,7 +9,10 @@ A template to comply with the [University of Twente Research Software Guidelines
 
 To align with FAIR4RS (Findable, Accessible, Interoperable, Reusable for Research Software) and Dutch Open Science standards (supported by institutions like NWO and eScience Center), your R project should be treated as a research software package. 
 
-In this specifiek repo of Irene, the R script is converted to python. The goal is to produce a repository that is able to run and perform the desired task.
+In this specifiek repo, the R script is converted to python. The goal is to produce a repository that is able to run and perform the desired task.
+
+# Software Management Plan
+For this course, the software management plan (SMP) template has been filled in. You can find that document [here](SMP_IDK.pdf).
 
 ## Folder Structure
 
