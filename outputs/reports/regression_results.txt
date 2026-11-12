@@ -3,8 +3,8 @@
 Dep. Variable:            body_mass_g   R-squared:                       0.354
 Model:                            OLS   Adj. R-squared:                  0.352
 Method:                 Least Squares   F-statistic:                     186.4
-Date:                Tue, 10 Nov 2026   Prob (F-statistic):           3.81e-34
-Time:                        13:58:55   Log-Likelihood:                -2697.0
+Date:                Thu, 12 Nov 2026   Prob (F-statistic):           3.81e-34
+Time:                        14:04:12   Log-Likelihood:                -2697.0
 No. Observations:                 342   AIC:                             5398.
 Df Residuals:                     340   BIC:                             5406.
 Df Model:                           1                                         
